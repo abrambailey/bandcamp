@@ -1,4 +1,3 @@
-%h3 Home
-- @users.each do |user|
-  %p
-    User: #{link_to user.name, user}
+- $track_id = 2475788903
+
+%iframe{ :src => "http://bandcamp.com/EmbeddedPlayer/v=2/track=#{$track_id}/size=venti/bgcol=FFFFFF/linkcol=4a4a4a/", :width=>"400", :height=>"100", :allowtransparency=>"true", :frameborder=>"0" }
