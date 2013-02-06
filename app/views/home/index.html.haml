@@ -1,3 +1,9 @@
-- $track_id = 2475788903
+%form{:action=>"#", :method => "post", :id=>"tag_form"}
+  %select
+    - @tags.each do |tag|
+      %option{:value=>"#{tag}"} #{tag}
 
-%iframe{ :src => "http://bandcamp.com/EmbeddedPlayer/v=2/track=#{$track_id}/size=venti/bgcol=FFFFFF/linkcol=4a4a4a/", :width=>"400", :height=>"100", :allowtransparency=>"true", :frameborder=>"0" }
+- @track_id = 2475788903
+
+%iframe{ :src => "http://bandcamp.com/EmbeddedPlayer/v=2/track=#{@track_id}/size=venti/bgcol=FFFFFF/linkcol=4a4a4a/", :width=>"400", :height=>"100", :allowtransparency=>"true", :frameborder=>"0" }
+
