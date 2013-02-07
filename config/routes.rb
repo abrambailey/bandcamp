@@ -5,4 +5,6 @@ Bandcamp::Application.routes.draw do
   root :to => "home#index"
   devise_for :users
   resources :users
+
+  match "tag/:tag", to: 'home#get_track'
 end

@@ -2,7 +2,7 @@
   - @tags.each do |tag|
     %option{:value => "#{tag}"}= tag
 - @track_id = 2475788903
-.holder{:style=>"margin-top:20px; border:2px solid #ddd; padding:15px; padding-bottom:10px; padding-right:0px; background-color:white; width:410px;"}
+%div{:style=>"margin-top:20px; border:2px solid #ddd; padding:15px; padding-bottom:10px; padding-right:0px; background-color:white; width:410px;"}
   %iframe{ :src => "http://bandcamp.com/EmbeddedPlayer/v=2/track=#{@track_id}/size=venti/bgcol=FFFFFF/linkcol=4a4a4a/", :width=>"400", :height=>"100", :allowtransparency=>"true", :frameborder=>"0" }
 
 :javascript
@@ -11,6 +11,7 @@
     $("select").change(function () {
       $("select option:selected").each(function () {
         var tag = $(this).text();
+        alert(tag);
         $.ajax({
           url: '/tag/' + tag,
           type: 'get',
@@ -18,16 +19,13 @@
           processData: false,
           success: function (data) {
             if (data == "") {
-              alert("Nada");
+              alert(tag);
             } else {
-              $('iframe').replaceWith("<iframe allowtransparency='true' frameborder='0' height='100' src='http://bandcamp.com/EmbeddedPlayer/v=2/track=" + data + "/size=venti/bgcol=FFFFFF/linkcol=4a4a4a/' width='400'></iframe>");
+              alert(tag);
             }
           }
         });
       });
-    });
-    $('iframe').load(function() {
-      content = $(this.contentDocument).find("div#totaltime").html();
     });
   }); 
 

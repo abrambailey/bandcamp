@@ -3,6 +3,7 @@ gem 'rails', '3.2.11'
 gem 'sqlite3'
 gem 'mechanize'
 gem 'nokogiri'
+gem 'domainatrix'
 
 gem "pry"
 gem "pry-debugger"
